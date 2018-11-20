@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<!--    Name: Donovan Olson
+        Assignment: CS336 Assignment #4
+        Created: 10/31/2018
+        Description: Registration Page. -->
+
+<html lang="en">
+<head>
+    <Title>Registration</Title>
+    <meta name="keywords"
+          content="Register for IT conference"/>
+    <meta name="description"
+          content="This page will provide the registration form for the event"/>
+    <meta name="author"
+          content="Donovan Olson" />
+    <meta name="robots"
+          content="follow"/>
+    <meta charset="UTF-8"/>
+    <link href="css/webdefault.css" type="text/css" rel="stylesheet"/>
+    <script src="/libraries/jquery-3.3.1.min.js"></script>
+    <script src="/libraries/jquery.cookie.js"></script>
+    <script src="js/javascript.js"></script>
+
+</head>
+
+<body>
+
+
+    <header>
+        <h1 style="text-align: center;">Registration</h1>
+    </header>
+    <nav style="text-align: center;">
+        <a href="awards.html">Member Choice Awards</a>
+        <a href="activities.html">Local Activities</a>
+        <a href="meals.html">Meals</a>
+        <a href="keynote.html">Key Note Speakers</a>
+        <a href="workshopschedule.html">Workshop Schedule</a>
+        <a href="registration.html">Registration Form</a>
+    </nav>
+    <h2 style="text-align: center;">
+        Please Resgister Your Info
+    </h2>
+    <label for="conferenceId">
+        <strong>Conference ID</strong>
+    </label>
+    <input type="text" id="conferenceId" value="" placeholder="Input Conference Number">
+    <form id="registration" method="post" >
+
+          <fieldset>
+              <legend>Personal Information</legend>
+                  <label>Title</label>
+              <label>
+                  <select id="sir">
+                      <option value="mr">Mr.</option>
+                      <option value="ms">Ms.</option>
+                      <option value="mrs">Mrs.</option>
+                      <option value="dr">Dr.</option>
+                  </select>
+              </label>
+              <br>
+                  <br>
+
+              <label for="firstname">First Name</label>
+                  <input type="text" id="firstname" name="firstname" required
+                         placeholder="First Name" pattern="^.{0,20}$">
+                   <br>
+                  <br>
+              <label for="lastname">Last Name</label>
+                  <input type="text" id="lastname" name="lastname" required
+                         placeholder="Last Name" pattern="^.{0,20}$">
+                   <br>
+                   <br>
+              <label for="address1">Address 1</label>
+                  <input type="text" id="address1" name="address1" required
+                         placeholder="address1">
+                  <br>
+                  <br>
+              <label for="address2">Address 2</label>
+              <input type="text" id="address2" name="address2"
+                     placeholder="address2">
+                  <br>
+                  <br>
+              <label for="city">City</label>
+                  <input type="text" id="city" name="city" required
+                      placeholder="city">
+                  <br>
+                  <br>
+              <label>State</label>
+                <label>
+                    <select id="state">
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="California">California</option>
+                        <option value="Colorado">Colorado</option>
+                        <option value="Connecticut">Connecticut</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="Flordia">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Idaho">Idaho</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Indiana">Indiana</option>
+                        <option value="Iowa">Iowa</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Maine">Maine</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Massachusetts">Massachusetts</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Minnesota">Minnesota</option>
+                        <option value="Mississippi">Mississippi</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="Nebraska">Nebraska</option>
+                        <option value="Nevada">Nevada</option>
+                        <option value="New Hampshire">New Hampshire</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New Mexico">New Mexico</option>
+                        <option value="New York">New York</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="North Dakota">North Dakota</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="Rhode Island">Rhode Island</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="South Dakota">South Dakota</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Utah">Utah</option>
+                        <option value="Vermont">Vermont</option>
+                        <option value="Virginia">Virgnia</option>
+                        <option value="Washington">Washington</option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                        <option value="Wyoming">Wyoming</option>
+                    </select>
+                </label>
+                  <br>
+                  <br>
+              <label for="zipcode">Zip Code</label>
+                  <input type="text" id="zipcode" name="zipcode" title="Please enter the zip code in this format:
+                         #####"
+                         placeholder="zipcode" pattern="[0-9]{5}">
+                  <br>
+                  <br>
+              <label for="telephonenumber">Telephone Number</label>
+                  <input type="text" id="telephonenumber" name="telephonenumber" title="Please enter phone number in this format ###-###-####" required
+                         placeholder="telephonenumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                  <br>
+                  <br>
+              <label for="email">Email Address</label>
+                  <input type="text" id="email" name="email" required
+                         placeholder="email" pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$">
+                  <br>
+                  <br>
+          </fieldset>
+          <fieldset>
+              <legend>Company Information</legend>
+                  <label for="website">Company Website</label>
+                      <input type="text" id="website" name="website"
+                         placeholder="website">
+                  <br>
+                  <br>
+              <label for="position">Position with Company</label>
+                  <input type="text" id="position" name="position" required
+                         placeholder="position" pattern="^[A-Z]{3,20}$"> 
+                         <!-- Input the value with min length 3, max length 20 -->
+              <br>
+              <br>
+              <label for="company">Name of Company</label>
+                  <input type="text" id="company" name="company" required
+                         placeholder="company" pattern="^[A-Z]{5,30}$">
+                         <!-- Input the value with min length 5, max length 30 -->
+              <br>
+              <br>
+          </fieldset>
+          -->
+          <fieldset>
+               <legend>Dining Information </legend>
+                      <label>Do you want to purchase the meal pack?</label><br>
+                      <input  onclick="dinnervalidation2()" id="yes" type="radio" name="meal1" value="yes" checked>Yes<br>
+                      <input  onclick="dinnervalidation1()" id="no" type="radio" name="meal1" value="no">No<br>
+                      <br>
+                      <br>
+              <div class="dinnerdaytwo" id="dinnerdaytwo">
+              <label id="daytwodinnertitle">Do you want to purchase just the Day 2 Dinner?</label><br>
+                  <input id="daytwodinner1" type="radio" name="meal2" value="yes" checked>Yes<br>
+                  <input id="daytwodinner2" type="radio" name="meal2" value="no">No<br>
+              </div>
+                  <br>
+                  <br>
+          </fieldset>
+
+          <fieldset>
+              <legend>Billing Information</legend>
+                  <label for="billingfirstname">Billing First Name</label>
+                      <input type="text" id="billingfirstname" name="billingfirstname" required
+                         placeholder="billingfirstname" pattern="[a-zA-Z]+">
+                  <br>
+                  <br>
+              <label for="billinglastname">Billing Last Name</label>
+                  <input type="text" id="billinglastname" name="billinglastname" required
+                     placeholder="billinglastname" pattern="[a-zA-Z]+">
+                  <br>
+                  <br>
+              <label>Card Type</label><br>
+                  <input type="radio" name="cardtype" value="visa" checked>Visa<br>
+                  <input type="radio" name="cardtype" value="mastercard">Master Card<br>
+                  <input type="radio" name="cardtype" value="discover">Discover<br>
+                  <input type="radio" name="cardtype" value="americanexpress">American Express<br>
+                  <br>
+                  <br>
+              <label for="cardnumber">Card Number</label>
+                  <input type="text" id="cardnumber" name="cardnumber" title="Please enter all 16 digits" required
+                         placeholder="cardnumber" pattern="[0-9]{16}">
+                  <br>
+                  <br>
+              <label for="cardsecurity">Card Security Code</label>
+                  <input type="text" id="cardsecurity" name="cardsecurity" title="Please enter 4 digit security code" required
+                         placeholder="cardsecurity" pattern="[0-9]{4}">
+                  <br>
+                  <br>
+              <label for="expirationyear">Expiration Year</label>
+                  <input type="text" id="expirationyear" name="expirationyear" title="Please enter in #### format and expiration date greater than last year" required
+                         placeholder="expirationyear" pattern="[2][0]([1-2][6-9])">
+              <br>
+              <br>
+              <label for="expirationmonth">Expiration Month</label>
+                  <input type="text" id="expirationmonth" name="expirationmonth" title="Please enter in ## format that is between 1 and 12" required
+                         placeholder="expirationmonth" pattern="(0[1-9]|1[0-2])">
+                  <br>
+                  <br>
+          </fieldset>
+          <fieldset>
+
+              <legend>Workshop Information</legend>
+              <label>Please select a workshop for Session 1</label><br>
+                  <input type="radio" id=w orkshopA name="session1" value="networking/networkingmanagement" checked>Networking/Networking Management<br>
+                  <input type="radio" id=workshopB name="session1" value="webprogramming">Web Programming<br>
+                  <input type="radio" id=workshopC name="session1" value="introductiontoinformationtechnology">Introduction to Information Technology<br>
+
+                  <br>
+              <label>Please select a workshop for Session 2</label><br>
+                  <input type="radio" id=workshopD name="session2" value="javaprogramming" checked>Java Programming<br>
+                  <input type="radio" id=workshopE name="session2" value="serveradministration">Server Administration<br>
+                  <input type="radio" id=workshopF name="session2" value="introductiontocybersecurity">Introduction to Cyber Security<br>
+                  <br>
+              <label>Please select a workshop for Session 3</label><br>
+                  <input type="radio" id=workshopG name="session3" value="pythonprogramming" checked>Python Programming<br>
+                  <input type="radio" id=workshopH name="session3" value="cyberforensics/hacking">Cyber Forensics/Hacking<br>
+                  <input type="radio" id=workshopI name="session3" value="introductiontopcapplications">Introduction to PC applications<br>
+              <br>
+              <br>
+          </fieldset>
+              <input type="submit" value="Register">
+
+          </form>
+
+
+  <footer>
+      <address><small>
+          3205 Palermo Ave
+          Evans, Colorado 80620
+          (970) 978 - 0757
+          dolson002@regis.edu
+      </small></address>
+
+      <p><small>While this web site was created to satisfy the requirement of
+          building a web site for an academic course at Regis University, the
+          views and opinions expressed on this web site are solely those of
+          the original author and do not necessarily represent the views and
+          opinions of Regis University. </small> </p>
+  </footer>
+
+  </body>
+
+  </html>

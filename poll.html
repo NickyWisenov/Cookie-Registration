@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!--    Name: Donovan Olson
+        Assignment: CS336 Assignment #4
+        Created: 10/31/2018
+        Description: poll Page. -->
+
+<html lang="en">
+<head>
+    <Title>Poll</Title>
+    <meta name="keywords"
+          content="thank you"/>
+    <meta name="description"
+          content="This is the page for polls"/>
+    <meta name="author"
+          content="Donovan Olson" />
+    <meta name="robots"
+          content="follow"/>
+    <meta charset="UTF-8"/>
+    <script src="/libraries/jquery-3.3.1.min.js"></script>
+    <script src="/libraries/jquery.cookie.js"></script>
+    <script src="js/javascript.js"></script>
+    <link href="css/webdefault.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+
+<header>
+    <h1 style="text-align: center;">Poll</h1>
+</header>
+<nav style="text-align: center;">
+
+        <a href="awards.html">Member Choice Awards</a>
+</nav>
+<h2 style="text-align: center;">
+        Poll
+</h2>
+
+    <h1>Please vote on your favorite Processor!</h1>
+        <form id="registration"  method="post">
+            <label>Processors in 2018</label><br>
+                <input type="radio" id="intel" name="vote" value="intel">Intel Processor<br>
+                <div id="intel-votes" class="votes">
+                </div>
+                <input type="radio" id="amd" name="vote" value="amd">AMD Processor<br>
+                <div id="amd-votes" class="votes">
+                </div>
+                <input type="radio" id="samsung" name="vote" value="samsung">Samsung Exynos Processor<br>
+                <div id="samsung-votes" class="votes">
+                </div>
+                <input type="submit" onclick="pollsubmit()" value="Submit">
+        </form>
+
+
+<footer>
+    <address><small>
+        3205 Palermo Ave
+        Evans, Colorado 80620
+        (970) 978 - 0757
+        dolson002@regis.edu
+    </small></address>
+
+    <p><small>While this web site was created to satisfy the requirement of
+        building a web site for an academic course at Regis University, the
+        views and opinions expressed on this web site are solely those of
+        the original author and do not necessarily represent the views and
+        opinions of Regis University. </small> </p>
+</footer>
+
+</body>
+
+</html>
