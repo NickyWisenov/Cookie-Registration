@@ -17,6 +17,9 @@
     <meta name="robots"
           content="follow"/>
     <meta charset="UTF-8"/>
+    <script src="libraries/jquery-3.3.1.min.js"></script>
+    <script src="libraries/jquery.cookie.js"></script>
+    <script src="js/javascript.js"></script>
     <link href="css/webdefault.css" type="text/css" rel="stylesheet"/>
 </head>
 
@@ -43,21 +46,25 @@
                 <th class="firstcolumn">Entry</th>
                 <th class="secondcolumn">Title</th>
                 <th class="thirdcolumn">Description</th>
+                <th class="votesnum">Votes</th>
             </tr>
             <tr class="intel">
                 <td class="intelpicture"><img src="images/Intel.jpg" alt="intel" class="intel"/></td>
                 <td class="inteltitle">Intel</td>
                 <td class="inteldescription">Intel Processor Lineup</td>
+                <td id="intel-votes-td">1</td>
             </tr>
             <tr>
                 <td class="amdpicture"><img src="images/AMD.jpg" alt="AMD" class="amd"/></td>
                 <td class="amdtitle">AMD</td>
                 <td class="amddescription">AMD Processor Lineup</td>
+                <td id="amd-votes-td">1</td>
             </tr>
             <tr>
                 <td class="samsungpicture"><img src="images/samsung.jpg" alt="samsung" class="samsung"/></td>
                 <td class="samsungtitle">Samsung</td>
                 <td class="samsungdescription">Exynos Processor Lineup</td>
+                <td id="samsung-votes-td">1</td>
             </tr>
         </table>
 <footer>

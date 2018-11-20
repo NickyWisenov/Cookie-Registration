@@ -51,6 +51,12 @@ th.thirdcolumn{
     width:500px;
     border:1px solid black;
 }
+
+table td{
+    text-align: center;
+    border: 1px solid black;
+}
+
 img.intel, img.amd, img.samsung{
     display: block;
     margin-left: auto;
