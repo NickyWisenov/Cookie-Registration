@@ -60,12 +60,15 @@ function validate() {
         if (document.getElementById("workshopF").checked == true)
             if (document.getElementById("workshopG").checked == true || document.getElementById("workshopI").checked == true)
                 alert("Choosing Introduction to Cyber-Security requires you to also take Cyber-Forensics/Hacking for Session 3");
+                return false;
 
         if (document.getElementById("workshopH").checked == true)
             if(document.getElementById("workshopF").checked == false)
                 alert("If you choose Cyber-Forensics/Hacking You must also choose Introduction to Cyber-Security for Session 2");
 
                 return false;
+    } else {
+        return true;
     }
 }
 
@@ -137,12 +140,20 @@ $(document).ready(function () {
     $("#registration").submit(function (e) {
         e.preventDefault();
         // This is the function you have mentioned
-        if (!validate()) return false;
-
-        if ($("#conferenceId").val() == '' ) {
+         if ($("#conferenceId").val() == '' ) {
             alert("Please Input the Conference ID");
         } else if ($("#conferenceId").val().length < 6) {
             alert("Conference ID should be 6 digits");
+        } else if (!validate()) {
+            $("#workshopA").prop("checked", true);
+            $("#workshopB").prop("checked", false);
+            $("#workshopC").prop("checked", false);
+            $("#workshopD").prop("checked", false);
+            $("#workshopE").prop("checked", false);
+            $("#workshopF").prop("checked", false);
+            $("#workshopG").prop("checked", false);
+            $("#workshopH").prop("checked", false);
+            $("#workshopI").prop("checked", false);
         } else {
             setCookie('registration');
             window.open('thankyou.html');
