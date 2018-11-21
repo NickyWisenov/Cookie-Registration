@@ -55,20 +55,17 @@ function validate() {
     if(document.getElementById("workshopB").checked == true){
         if (document.getElementById("workshopD").checked == true || document.getElementById("workshopE").checked == true || document.getElementById("workshopF").checked == true)
                 alert("The workshop Web Programming is an all day event. Selecting this workshop requires your attendance all day so Session 2 will be be available to register for");
+                return false;
 
         if (document.getElementById("workshopF").checked == true)
             if (document.getElementById("workshopG").checked == true || document.getElementById("workshopI").checked == true)
-                    alert("Choosing Introduction to Cyber-Security requires you to also take Cyber-Forensics/Hacking for Session 3");
-
+                alert("Choosing Introduction to Cyber-Security requires you to also take Cyber-Forensics/Hacking for Session 3");
 
         if (document.getElementById("workshopH").checked == true)
             if(document.getElementById("workshopF").checked == false)
-                    alert("If you choose Cyber-Forensics/Hacking You must also choose Introduction to Cyber-Security for Session 2");
+                alert("If you choose Cyber-Forensics/Hacking You must also choose Introduction to Cyber-Security for Session 2");
 
-                    return false;
-            }
-    else{
-        return window.open("thankyou.html");
+                return false;
     }
 }
 
@@ -139,20 +136,13 @@ $(document).ready(function () {
     // Registration Info Submit Function
     $("#registration").submit(function (e) {
         e.preventDefault();
+        // This is the function you have mentioned
+        if (!validate()) return false;
+
         if ($("#conferenceId").val() == '' ) {
             alert("Please Input the Conference ID");
         } else if ($("#conferenceId").val().length < 6) {
             alert("Conference ID should be 6 digits");
-        } else if($("#workshopB").checked == true){
-            if ($("#workshopD").checked == true || $("#workshopE").checked == true || $("#workshopF").checked == true)
-                    alert("The workshop Web Programming is an all day event. Selecting this workshop requires your attendance all day so Session 2 will be be available to register for");
-            if ($("#workshopF").checked == true)
-                if ($("#workshopG").checked == true || $("#workshopI").checked == true)
-                        alert("Choosing Introduction to Cyber-Security requires you to also take Cyber-Forensics/Hacking for Session 3");
-            if ($("#workshopH").checked == true)
-                if($("#workshopF").checked == false)
-                        alert("If you choose Cyber-Forensics/Hacking You must also choose Introduction to Cyber-Security for Session 2");
-                        return false;
         } else {
             setCookie('registration');
             window.open('thankyou.html');
